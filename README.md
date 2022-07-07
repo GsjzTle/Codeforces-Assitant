@@ -16,7 +16,7 @@
 
 ### 安装
 
-`git clone `
+`git clone https://github.com/GsjzTle/Codeforces-Assitant.git`
 
 ### 配置
 
