@@ -1,12 +1,10 @@
-# CodeforcesHelper
+# Codeforces-Assitant
 
 > 基于 go-http + python 的 codeforces-Q群机器人
 >
 > 支持 `@`，支持私聊、群聊
 >
 > 支持多线程定时信息传输
-
-
 
 ### 功能介绍：
 
@@ -16,7 +14,9 @@
 
 ### 安装
 
-`git clone https://github.com/GsjzTle/Codeforces-Assitant.git`
+```bash
+git clone https://github.com/GsjzTle/Codeforces-Assitant.git
+```
 
 ### 配置
 
@@ -142,22 +142,35 @@ servers:
 ### 运行
 
 + `go-cqhttp`
+  进入 `go-cqhttp` 目录，执行命令：
 
-进入 `go-cqhttp` 目录，执行命令 `nohup ./go-cqhttp  &`。
+  ```bash
+  nohup python codeforces/api.py &
+  ```
 
 + cfReboot
+  进入 `CFRobot` 目录，激活虚拟环境：
 
-进入 `CFReboot` 目录，激活虚拟环境：
+  ```bash
+  virtualenv venv --python=python3.7
+  cd venv
+  source ./bin/activate
+  ```
 
-1. `virtualenv venv --python=python3.7`
-2. `cd venv`
-3. `source ./bin/activate`
+  安装依赖：
+  ```bash
+  pip3 install -r requirements.txt
+  ```
 
-安装依赖
+  返回 `CFReboot` 根目录，执行：
 
-`pip3 install -r requirements.txt`
+  + 主动（定时式）任务：
+    ```bash
+    nohup python main.py &
+    ```
 
-返回 `CFReboot` 根目录，执行：
+  + 被动（触发式）任务：
+    ```bash
+    nohup python codeforces/api.py &
+    ```
 
-1. 主动（定时式）任务：`nohup python main.py &`
-2. 被动（触发式）任务：`nohup python codeforces/api.py &`
